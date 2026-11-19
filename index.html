@@ -186,3 +186,11 @@
 
     contactForm.addEventListener("submit", (event) => {
       event.preventDefault();
+      const name = document.getElementById("name").value;
+      statusMessage.textContent = `Thank you, ${name}! Your message has been sent.`;
+      contactForm.reset();
+    });
+  </script>
+
+</body>
+</html>
