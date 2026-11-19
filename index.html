@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Basic Website</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background-color: #f4f6f9;
+      color: #333333;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #003366;
+      color: #ffffff;
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 70px 20px;
+      background-color: #e6eef8;
+    }
+
+    .hero h1 {
+      font-size: 36px;
+      color: #003366;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      background-color: #003366;
+      color: #ffffff;
+      border: none;
+      padding: 12px 24px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: #0055aa;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .card h3 {
+      color: #003366;
+      margin-bottom: 10px;
+    }
+
+    .contact-section {
+      max-width: 500px;
+      margin: 40px auto;
+      background-color: #ffffff;
+      padding: 25px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-section h2 {
+      color: #003366;
+      margin-bottom: 15px;
+    }
+
+    .contact-section input,
+    .contact-section textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 12px;
+      border: 1px solid #cccccc;
+      border-radius: 4px;
+    }
+
+    #statusMessage {
+      margin-top: 12px;
+      font-weight: bold;
+      color: #006600;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #003366;
+      color: #ffffff;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h2>MyWebsite</h2>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <h1>Welcome to Our Website</h1>
+    <p>Simple, clean, and responsive web design using HTML, CSS, and JavaScript.</p>
+    <button class="btn" id="greetBtn">Click Me</button>
+  </section>
+
+  <section class="container" id="services">
+    <div class="card">
+      <h3>Web Development</h3>
+      <p>Building fast and responsive websites tailored to your needs.</p>
+    </div>
+    <div class="card">
+      <h3>UI/UX Design</h3>
+      <p>Creating clean, user-friendly interfaces for modern web apps.</p>
+    </div>
+    <div class="card">
+      <h3>App Solutions</h3>
+      <p>Developing scalable software and interactive digital tools.</p>
+    </div>
+  </section>
+
+  <section class="contact-section" id="contact">
+    <h2>Contact Us</h2>
+    <form id="contactForm">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="email" id="email" placeholder="Your Email" required>
+      <textarea id="message" rows="4" placeholder="Your Message" required></textarea>
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+    <p id="statusMessage"></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 MyWebsite. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const greetBtn = document.getElementById("greetBtn");
+    greetBtn.addEventListener("click", () => {
+      alert("Hello! Welcome to MyWebsite.");
+    });
+
+    const contactForm = document.getElementById("contactForm");
+    const statusMessage = document.getElementById("statusMessage");
+
+    contactForm.addEventListener("submit", (event) => {
+      event.preventDefault();
